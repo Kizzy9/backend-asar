@@ -15,11 +15,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $user = \App\Models\User::updateOrCreate(
+            ['email' => 'contoh@abdul.com'],
+            [
+                'name' => 'Abdul Ksatria',
+                'username' => 'abdul123',
+                'password' => \Illuminate\Support\Facades\Hash::make('password123'),
+            ]
+        );
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        \App\Models\UserProgress::updateOrCreate(
+            ['user_id' => $user->id],
+            [
+                'current_level' => 'HBA Pemula (Tahap 2)',
+                'progress_percent' => 45,
+                'skills' => [
+                    ['name' => 'Pengenalan & Bonding Kuda', 'status' => 'checked'],
+                    ['name' => 'Keseimbangan Dasar (Walk)', 'status' => 'checked'],
+                    ['name' => 'Postur Posting Trot', 'status' => 'active'],
+                    ['name' => 'Teknik Panahan Bawah', 'status' => 'locked']
+                ],
+                'coach_name' => 'Coach Zaky',
+                'instructor_note' => 'Postur punggung sudah jauh lebih tegak dari minggu lalu. Jangan lupa latihan pernapasan sebelum naik ya agar Bintang (kuda) ikut rileks. Sampai jumpa hari Jumat!',
+                'note_date' => now()
+            ]
+        );
     }
 }

@@ -12,18 +12,20 @@ class AuthController extends Controller
     {
         // 1. Validasi input dari Vue.js / Postman
         $request->validate([
-            'email' => 'required|email',
+            'login_id' => 'required|string',
             'password' => 'required',
         ]);
 
-        // 2. Cari user berdasarkan email
-        $user = User::where('email', $request->email)->first();
+        // 2. Cari user berdasarkan email atau username
+        $user = User::where('email', $request->login_id)
+                    ->orWhere('username', $request->login_id)
+                    ->first();
 
         // 3. Cek apakah user ada dan password-nya cocok
         if (! $user || ! Hash::check($request->password, $user->password)) {
             return response()->json([
                 'success' => false,
-                'message' => 'Email atau password salah.'
+                'message' => 'Username/Email atau password salah.'
             ], 401);
         }
 

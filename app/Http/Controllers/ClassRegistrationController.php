@@ -20,6 +20,7 @@ class ClassRegistrationController extends Controller
             'tempat_lahir'    => 'nullable|string',
             'tanggal_lahir'   => 'nullable|date',
             'email'           => 'required|email',
+            'username'        => 'required|string|unique:users,username',
             'nomor_whatsapp'  => 'required|string',
             'alamat_domisili' => 'nullable|string',
             'password'        => 'required|string|min:6',
@@ -43,12 +44,11 @@ class ClassRegistrationController extends Controller
             ]);
 
             // 2. Buat Akun Member (User)
-            // Jika email sudah ada, kita update passwordnya (atau bisa lempar error validasi unique)
-            // Di sini kita pakai updateOrCreate untuk skenario ini, tapi lebih baik create jika belum ada.
             $user = User::firstOrCreate(
                 ['email' => $validated['email']],
                 [
                     'name' => $validated['nama_lengkap'],
+                    'username' => $validated['username'],
                     'password' => Hash::make($validated['password']),
                 ]
             );

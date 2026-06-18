@@ -74,6 +74,16 @@
 
           <!-- Tambahan Input untuk Pembuatan Akun & Progress -->
           <div class="input-group">
+            <label>Username (Nama Pengguna)</label>
+            <input 
+              v-model="formData.username" 
+              type="text" 
+              placeholder="Contoh: ahmad123 (Tanpa spasi)" 
+              required 
+            />
+          </div>
+
+          <div class="input-group">
             <label>Kata Sandi (Untuk Login)</label>
             <input 
               v-model="formData.password" 
@@ -159,6 +169,7 @@ const formData = ref({
   hp: '',
   email: '',
   alamat: '',
+  username: '',
   password: '',
   coach: '',
   pengalaman: ''
@@ -184,6 +195,7 @@ const submitRegistration = async () => {
       email: formData.value.email,
       nomor_whatsapp: formData.value.hp,
       alamat_domisili: formData.value.alamat,
+      username: formData.value.username,
       password: formData.value.password,
       coach: formData.value.coach,
       pengalaman: formData.value.pengalaman

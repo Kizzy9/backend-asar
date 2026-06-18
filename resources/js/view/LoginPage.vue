@@ -2,17 +2,17 @@
   <div class="glass-card">
     <div class="header">
       <h2>Selamat Datang</h2>
-      <p>Masuk untuk menjelajahi oase</p>
+      <p>Masuk untuk menjelajahi ASAR</p>
     </div>
 
     <form @submit.prevent="handleLogin" class="form-content">
       <div class="input-group">
-        <label>Email</label>
+        <label>Email/Username</label>
         <div class="input-wrapper">
           <input 
-            v-model="form.email" 
-            type="email" 
-            placeholder="contoh@gurun.com" 
+            v-model="form.login_id" 
+            type="text" 
+            placeholder="contoh@abdul.com / abdul123" 
             autocomplete="username"
             required 
           />
@@ -64,7 +64,7 @@ import api from '../axios';
 const router = useRouter();
 
 const form = ref({ 
-  email: '', 
+  login_id: '', 
   password: '' 
 });
 
