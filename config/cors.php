@@ -12,9 +12,8 @@ return [
 
     'allowed_methods' => ['*'],
 
-    // Izinkan akses dari port Vue.js (localhost:5173 atau 5174)
-    // Atau gunakan ['*'] untuk mengizinkan semua (hanya untuk tahap development)
-    'allowed_origins' => ['http://localhost:5173', 'http://127.0.0.1:5173'],
+    // Izinkan akses dari mana saja (Vercel atau localhost)
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
