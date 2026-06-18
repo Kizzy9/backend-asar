@@ -23,7 +23,8 @@ return [
 
     'max_age' => 0,
 
-    // Ubah ini menjadi true jika Vue.js nanti butuh fitur Login/Cookie (Sanctum)
-    'supports_credentials' => true,
+    // Ubah ini menjadi true hanya jika Vue.js/Next.js butuh fitur Cookie (Sanctum stateful)
+    // Karena kita pakai Bearer Token di Header, set ke false agar aman dengan allowed_origins *
+    'supports_credentials' => false,
 
 ];

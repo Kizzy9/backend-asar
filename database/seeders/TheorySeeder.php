@@ -19,7 +19,7 @@ class TheorySeeder extends Seeder
         Theory::create([
             'title' => '1. Fundamental Posisi Duduk (Basic Seat)',
             'excerpt' => 'Kunci utama dari berkuda adalah keseimbangan tubuh. Pelajari postur tegak, posisi bahu, dan tumit yang benar.',
-            'image_url' => 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=600&q=80',
+            'image_url' => '/images/theories/basic_seat.png',
             'content' => '
                 <h3>Pedoman Posisi Tubuh yang Benar:</h3>
                 <p>Saat berada di atas pelana, tubuh Anda harus membentuk garis lurus imajiner mulai dari telinga, bahu, pinggul, hingga tumit kaki Anda.</p>
@@ -35,7 +35,7 @@ class TheorySeeder extends Seeder
         Theory::create([
             'title' => '2. Membangun Contact & Tali Kekang (Reins Control)',
             'excerpt' => 'Kontak yang lembut melalui tali kekang adalah jembatan komunikasi utama antara tangan rider dan mulut kuda.',
-            'image_url' => 'https://images.unsplash.com/photo-1601987077677-5346c0c57d3f?auto=format&fit=crop&w=600&q=80',
+            'image_url' => '/images/theories/reins.png',
             'content' => '
                 <h3>Cara Memegang Tali Kekang & Mengatur Kontak (Contact):</h3>
                 <p>Tali kekang bukanlah alat untuk berpegangan agar tidak jatuh, melainkan alat kemudi. Kontak yang baik harus terasa konstan, mantap, namun tetap lembut bagi mulut kuda.</p>
@@ -51,7 +51,7 @@ class TheorySeeder extends Seeder
         Theory::create([
             'title' => '3. Larangan Keras saat Berada di Area Berkuda (Don\'ts)',
             'excerpt' => 'Aturan keselamatan krusial yang wajib dipatuhi demi keamanan diri sendiri, orang lain, dan kuda di Asar Stable.',
-            'image_url' => 'https://images.unsplash.com/photo-1599256621730-535171e28e50?auto=format&fit=crop&w=600&q=80',
+            'image_url' => '/images/theories/donts.png',
             'content' => '
                 <h3>Hal-Hal yang DILARANG KERAS demi Keselamatan Bersama:</h3>
                 <p>Kuda adalah hewan mangsa (prey animal) yang memiliki insting waspada tinggi dan mudah terkejut. Melanggar poin di bawah ini dapat berakibat cedera fatal.</p>
@@ -61,6 +61,38 @@ class TheorySeeder extends Seeder
                     <li><strong>Jangan Melilitkan Tali Kekang ke Tangan atau Jari:</strong> Jika kuda tiba-tiba panik dan menarik kekangannya, tangan Anda bisa terseret dan mengalami patah tulang.</li>
                     <li><strong>Dilarang Mengabaikan Alat Pelindung Diri (APD):</strong> Jangan pernah menaiki kuda tanpa menggunakan Helm standar keselamatan berkuda dan sepatu khusus (boots).</li>
                 </ol>
+            '
+        ]);
+
+        // Materi 4: Memanah (HBA)
+        Theory::create([
+            'title' => '4. Fundamental Horseback Archery (HBA)',
+            'excerpt' => 'Teknik dasar memanah di atas kuda. Fokus pada melepas tali kekang (blind riding) dan nocking anak panah dengan cepat.',
+            'image_url' => '/images/theories/archery.png',
+            'content' => '
+                <h3>Teknik Dasar Memanah Berkuda (Horseback Archery):</h3>
+                <p>Memanah di atas kuda membutuhkan keseimbangan tingkat tinggi karena Anda harus melepaskan kendali tangan dari tali kekang. Ini sering disebut sebagai <strong>Blind Riding</strong> atau kemudi menggunakan postur tubuh.</p>
+                <ul>
+                    <li><strong>Kemudi Tanpa Tangan (Seat & Leg Aids):</strong> Anda harus sepenuhnya mengandalkan tekanan kaki dan pergeseran berat badan (pinggul) untuk mengarahkan atau menahan laju kuda.</li>
+                    <li><strong>Posisi Memanah (The Archer\'s Form):</strong> Berdiri sedikit dari pelana saat kuda berlari untuk meredam guncangan (Half-Seat position), putar pinggang menghadap target tanpa mengubah arah pandangan kuda.</li>
+                    <li><strong>Nocking Cepat (Fast Nocking):</strong> Dalam HBA, kecepatan memasang anak panah ke tali busur sangat krusial. Gunakan teknik quiver samping atau memegang beberapa panah di tangan busur.</li>
+                </ul>
+            '
+        ]);
+
+        // Materi 5: Jumping
+        Theory::create([
+            'title' => '5. Persiapan Dasar Show Jumping (Lompat Rintangan)',
+            'excerpt' => 'Mengenal teknik Two-Point Position dan mengatur langkah kuda (strides) sebelum melompat.',
+            'image_url' => '/images/theories/jumping.png',
+            'content' => '
+                <h3>Dasar-Dasar untuk Memulai Jumping:</h3>
+                <p>Lompat rintangan (Show Jumping) bukan hanya soal kuda yang melompat, melainkan bagaimana rider membantu kuda menemukan titik lompat yang pas.</p>
+                <ul>
+                    <li><strong>Two-Point Position (Jumping Position):</strong> Posisi di mana berat badan didistribusikan hanya pada dua titik: lutut dan tumit. Pinggul diangkat sedikit dari pelana, dan dada condong ke depan. Latih posisi ini saat kuda sedang trot dan canter.</li>
+                    <li><strong>Pengaturan Jarak (Distances):</strong> Pelajari cara membaca jarak (strides) antara kuda Anda dengan rintangan. Jangan biarkan kuda melompat terlalu dekat (deep) atau terlalu jauh (long).</li>
+                    <li><strong>Release Tangan:</strong> Saat kuda berada di udara, tangan Anda harus didorong sedikit ke arah leher kuda untuk memberikan kebebasan pada mulut kuda agar lehernya bisa terentang sempurna saat melompat.</li>
+                </ul>
             '
         ]);
     }
