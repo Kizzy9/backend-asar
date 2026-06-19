@@ -28,6 +28,8 @@ Route::get('/classes', [ClassPackageController::class, 'index']);
 Route::get('/tour-packages', [TourPackageController::class, 'index']);
 
 Route::post('/register-class', [ClassRegistrationController::class, 'store']);
+Route::post('/checkout', [\App\Http\Controllers\CheckoutController::class, 'checkout']);
+Route::post('/midtrans/webhook', [\App\Http\Controllers\CheckoutController::class, 'webhook']);
 
 
 // ==========================================================
@@ -56,5 +58,16 @@ Route::middleware('auth:sanctum')->group(function () {
     // Progress & Reschedule
     Route::get('/user-progress', [\App\Http\Controllers\UserProgressController::class, 'index']);
     Route::post('/reschedule', [\App\Http\Controllers\RescheduleRequestController::class, 'store']);
+
+    // Admin Routes
+    Route::middleware('admin')->group(function () {
+        Route::get('/admin/members', [\App\Http\Controllers\AdminController::class, 'getMembers']);
+        Route::put('/admin/progress/{id}', [\App\Http\Controllers\AdminController::class, 'updateProgress']);
+        Route::get('/admin/reschedules', [\App\Http\Controllers\AdminController::class, 'getReschedules']);
+        Route::put('/admin/reschedules/{id}', [\App\Http\Controllers\AdminController::class, 'updateReschedule']);
+        Route::get('/admin/stats', [\App\Http\Controllers\AdminController::class, 'getDashboardStats']);
+        Route::get('/admin/transactions', [\App\Http\Controllers\AdminController::class, 'getTransactions']);
+        Route::get('/admin/registrations', [\App\Http\Controllers\AdminController::class, 'getRegistrations']);
+    });
 
 });

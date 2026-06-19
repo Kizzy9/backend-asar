@@ -21,6 +21,18 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Abdul Ksatria',
                 'username' => 'abdul123',
                 'password' => \Illuminate\Support\Facades\Hash::make('password123'),
+                'role' => 'member',
+            ]
+        );
+
+        // Admin User
+        \App\Models\User::updateOrCreate(
+            ['email' => 'admin@asarstable.com'],
+            [
+                'name' => 'Coach Zaky (Admin)',
+                'username' => 'admin',
+                'password' => \Illuminate\Support\Facades\Hash::make('admin123'),
+                'role' => 'admin',
             ]
         );
 
